@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-with, initial-scale=1.0" />
+        <title>Projeto03 - Baima</title>
+        <style>
+            body {
+                background-color: blue;
+                color: white;
+                font-family: Arial, sans-serif;
+                padding: 20px;
+            }
+        </style>
+        <body>
+            <div>
+                
+                <h1>Painel de Operações - <p1>Multiplicação, Exponenciação e Comparação</p1></h1>
+                <label for="numero1">Número 1:</label>
+    <input type="number" id="numero1"><p> <p></p>
+
+    <label for="numero2">Número 2:</label>
+    <input type="number" id="numero2"><p> <p></p>
+    <label for="resultado">Resultado:</label>
+    <input type="text" id="resultado" readonly> <p> <p></p>
+    <button onclick="multiplicacao()">Multiplicação</button>
+    <button onclick="exponenciacao()">Exponenciação</button>
+    <button onclick="comparacao()">Comparação</button>
+
+    <script>
+        function multiplicacao() {
+            var num1 = parseFloat(document.getElementById("numero1").value);
+            var num2 = parseFloat(document.getElementById("numero2").value);
+            var resultado = num1 * num2;
+            document.getElementById("resultado").value = resultado;
+        }
+
+        function exponenciacao() {
+            var num1 = parseFloat(document.getElementById("numero1").value);
+            var num2 = parseFloat(document.getElementById("numero2").value);
+            var maiorNumero = num1 > num2 ? num1 : num2;
+            var menorNumero = num1 > num2 ? num2 : num1;
+            var resultado = Math.pow(maiorNumero, menorNumero);
+            document.getElementById("resultado").value = resultado;
+        }
+
+        function comparacao() {
+            var num1 = parseFloat(document.getElementById("numero1").value);
+            var num2 = parseFloat(document.getElementById("numero2").value);
+            var resultado = num1 > num2 ? num1 + " é maior que " + num2 : num2 + " é maior que " + num1;
+            document.getElementById("resultado").value = resultado;
+        }
+    </script>
+
+
+        </body>
+    </head>
+</html>
